@@ -10,6 +10,8 @@ class Shipper implements NodeInterface
     /** @deprecated */
     public $Name;
     /** @deprecated */
+    public $CompanyName;
+    /** @deprecated */
     public $AttentionName;
     /** @deprecated */
     public $TaxIdentificationNumber;
@@ -28,6 +30,11 @@ class Shipper implements NodeInterface
      * @var string
      */
     protected $name;
+
+    /**
+     * @var string
+     */
+    protected $companyName;
 
     /**
      * @var string
@@ -74,6 +81,9 @@ class Shipper implements NodeInterface
         if (null !== $attributes) {
             if (isset($attributes->Name)) {
                 $this->setName($attributes->Name);
+            }
+            if (isset($attributes->CompanyName)) {
+                $this->setCompanyName($attributes->CompanyName);
             }
             if (isset($attributes->AttentionName)) {
                 $this->setAttentionName($attributes->AttentionName);
@@ -216,6 +226,25 @@ class Shipper implements NodeInterface
     {
         $this->Name = $name;
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->companyName;
+    }
+
+    /**
+     * @param string $companyName
+     * @return $this
+     */
+    public function setCompanyName($companyName)
+    {
+        $this->CompanyName = $companyName;
+        $this->companyName = $companyName;
         return $this;
     }
 

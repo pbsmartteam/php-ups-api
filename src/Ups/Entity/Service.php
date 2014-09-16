@@ -49,6 +49,9 @@ class Service implements NodeInterface
     /** @deprecated */
     public $Description;
 
+    /** @deprecated */
+    public $Code;
+
     /**
      * @var string
      */
@@ -112,6 +115,7 @@ class Service implements NodeInterface
      */
     public function setCode($code)
     {
+        $this->Code = $code;
         $this->code = $code;
         return $this;
     }
